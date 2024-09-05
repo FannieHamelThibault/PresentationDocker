@@ -1,5 +1,5 @@
 # Utiliser une image PHP officielle avec Composer pré-installé
-FROM php:7.4-cli
+FROM php:8.2-cli
 
 # Installer les dépendances nécessaires (comme zip, unzip, etc.)
 RUN apt-get update && apt-get install -y \
