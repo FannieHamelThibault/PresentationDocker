@@ -1,5 +1,5 @@
-# Utiliser une image PHP officielle avec Composer pré-installé
-FROM php:8.2-cli
+# Utiliser une image PHP officielle
+FROM php:7.2-cli
 
 # Installer les dépendances nécessaires (comme zip, unzip, etc.)
 RUN apt-get update && apt-get install -y \
@@ -9,10 +9,15 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install zip
 
 # Installer Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Exposer le port 8000
+EXPOSE 8000
+
+USER root
 
 # Créer un répertoire de travail pour le projet
 WORKDIR /app
 
 # Commande par défaut à exécuter dans le conteneur
-CMD [ "php", "-a" ]
+CMD [ "php", "-a"]

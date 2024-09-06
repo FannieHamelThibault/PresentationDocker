@@ -6,6 +6,8 @@ services:
     volumes:
       - ./UnProjet:/var/www/html
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - monreseau
     depends_on:
       - php
 
@@ -17,6 +19,8 @@ services:
       - ./UnProjet:/var/www/html
     depends_on:
       - db
+    networks:
+      - monreseau
 
   db:
     image: mysql:5.7
@@ -25,6 +29,12 @@ services:
       MYSQL_DATABASE: UneBD
     volumes:
       - db_data:/var/lib/mysql
+    networks:
+      - monreseau
 
 volumes:
   db_data:
+
+networks:
+  monreseau:
+    driver: bridge
