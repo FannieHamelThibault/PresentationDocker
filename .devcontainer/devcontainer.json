@@ -1,6 +1,6 @@
 {
   "name": "Laravel Dev Container",
-  "dockerComposeFile": "../Scenario3/docker-compose.yml",
+  "dockerComposeFile": "../Scenario3_LeSeigneurDesConteneurs/docker-compose.yml",
   "service": "php",
   "workspaceFolder": "/var/www/html",
   "customizations": {
