@@ -12,7 +12,7 @@ Ce scenario présente un conteneur solitaire composé de php 8.2 et de Composer.
 ## Pour lancer le scénario...
 S'assurer d'être dans Scenario1 dans le terminal
 1. `docker build -t phpcegep .`
-2. `docker run -it -p 8000:8000 -v CHEMIN/DU/PROJET/SUR/L'HÔTE:/app phpcegep bash`
+2. `docker run -it -p 8000:8000 -v D:\GitHub\PresentationDocker\Scenario1_TheLoneConteneur:/app phpcegep bash`
 3. `cd UnProjet`
 4. `php artisan serve --host 0.0.0.0`
 
